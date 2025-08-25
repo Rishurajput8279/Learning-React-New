@@ -35,8 +35,7 @@ export const todoSlice = createSlice({
             if(todo) {
                 todo.text= text;
             }
-        },
-
+        }
     }
 })
 

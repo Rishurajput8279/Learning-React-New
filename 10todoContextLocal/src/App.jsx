@@ -24,8 +24,11 @@ function App() {
   }
 
   const toggleComplete=(id) =>{
-    setTodos((prev) => prev.map((prevTodo)=> prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed} : prevTodo))
+    setTodos((prev)=>{
+      prev.map((prevTodo)=> (prevTodo.id === id ? {...prevTodo, completed: !completed} : prevTodo))
+    })
   }
+  // local storage
   useEffect(()=>{
     const todos = JSON.parse(localStorage.getItem("todos"))
     if(todos && todos.length > 0){
